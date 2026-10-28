@@ -39,8 +39,8 @@ class Settings:
             self.tz = ZoneInfo(env.get("BOT_TZ") or "Africa/Nairobi")
         except Exception:
             self.tz = ZoneInfo("UTC")
-        self.host = env.get("BOT_HOST") or "127.0.0.1"          # Caddy/nginx sits in front; never bind publicly
-        self.port = _int(env, "BOT_PORT", 8000)
+        self.host = env.get("BOT_HOST") or "0.0.0.0"
+self.port = _int(env, "PORT", _int(env, "BOT_PORT", 10000))
         self.max_users = _int(env, "MAX_USERS", 20)
         self.allow_real = (env.get("ALLOW_REAL", "1").strip() not in ("0", "false", "no"))
         self.real_max_stake = _float(env, "REAL_MAX_STAKE", 5.00)
