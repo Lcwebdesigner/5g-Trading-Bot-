@@ -1,0 +1,8 @@
+# Replace bot.yourdomain.com with your real address. Caddy gets and renews the https certificate by itself.
+bot.yourdomain.com {
+	encode gzip
+	reverse_proxy 127.0.0.1:8000
+	log {
+		output discard      # sign-in links contain one-time codes: keep them out of log files
+	}
+}

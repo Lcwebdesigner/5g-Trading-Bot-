@@ -1,0 +1,21 @@
+[Unit]
+Description=5G Trading Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=bot5g
+Group=bot5g
+WorkingDirectory=/opt/5g
+EnvironmentFile=/etc/5g-bot.env
+ExecStart=/opt/5g/.venv/bin/python -m webapp.server
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/opt/5g/data
+
+[Install]
+WantedBy=multi-user.target
