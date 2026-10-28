@@ -1,3 +1,9 @@
+"""Flask server for the 5G Trading Bot web app.
+
+Run (from the project folder):   python -m webapp.server
+Behind a reverse proxy that provides https (see deploy/DEPLOY.md). ONE process only: sign-in sessions and
+running bots live in memory, so never start several workers.
+"""
 import logging
 import os
 import sys
@@ -211,4 +217,3 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
-  
