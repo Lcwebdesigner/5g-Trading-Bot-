@@ -39,14 +39,15 @@ class Settings:
             self.tz = ZoneInfo(env.get("BOT_TZ") or "Africa/Nairobi")
         except Exception:
             self.tz = ZoneInfo("UTC")
-        self.host = env.get("BOT_HOST") or "0.0.0.0"
-self.port = _int(env, "PORT", _int(env, "BOT_PORT", 10000))
-        self.max_users = _int(env, "MAX_USERS", 20)
-        self.allow_real = (env.get("ALLOW_REAL", "1").strip() not in ("0", "false", "no"))
-        self.real_max_stake = _float(env, "REAL_MAX_STAKE", 5.00)
-        self.real_max_daily_loss = _float(env, "REAL_MAX_DAILY_LOSS", 10.00)
-        self.demo_max_stake = _float(env, "DEMO_MAX_STAKE", 100.00)
-        self.symbol = "R_100"
+                    self.host = env.get("BOT_HOST") or "0.0"
+self.port = _int(env, "PORT", _int(env, "BOT_PO
+            self.max_users = _int(env, "MAX_USERS",
+            self.allow_real = (env.get("ALLOW_REAL"
+            self.real_max_stake = _float(env, "REAL
+            self.real_max_daily_loss = _float(env,
+            self.demo_max_stake = _float(env, "DEMO
+            self.symbol = "R_100"
+
 
     @property
     def redirect_uri(self):
