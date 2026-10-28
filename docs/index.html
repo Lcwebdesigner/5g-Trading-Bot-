@@ -1,1 +1,49 @@
-h
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>5G Trading Bot | Live Signal Monitor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">5G</span><div><strong>5G Trading Bot</strong><small>DERIV MARKET MONITOR</small></div></div>
+  <span id="connection" class="status"><i></i> Disconnected</span>
+</header>
+<main>
+  <section class="intro">
+    <p class="eyebrow">BROWSER TEST VERSION</p>
+    <h1>Market signals.<br><span>Clear visibility.</span></h1>
+    <p class="sub">Monitor live R_100 ticks and your EMA + MACD + RSI research signal. This starter version does not place trades or connect to trading accounts.</p>
+  </section>
+  <section class="settings card">
+    <label for="appid">Deriv App ID <span>(application ID, not an API token)</span></label>
+    <div class="connect-row"><input id="appid" inputmode="numeric" placeholder="Enter your Deriv App ID"><button id="connectBtn">Connect feed</button></div>
+    <p class="hint">Use an App ID from your Deriv application settings. Never enter an API token or password here.</p>
+  </section>
+  <section class="grid">
+    <article class="card price-card"><div class="card-label">MARKET <span class="live-dot"></span></div><h2>Volatility 100 Index</h2><div id="price" class="price">—</div><div class="muted">Symbol: R_100</div></article>
+    <article class="card signal-card"><div class="card-label">RESEARCH SIGNAL</div><div id="signal" class="signal wait">WAIT</div><p id="explanation" class="muted">Connect to the market feed to collect tick history.</p></article>
+  </section>
+  <section class="card">
+    <div class="section-head"><h2>Indicator readings</h2><span id="tickCount" class="muted">0 / 100 ticks</span></div>
+    <div class="indicators">
+      <div><span>EMA 9</span><strong id="ema9">—</strong></div>
+      <div><span>EMA 21</span><strong id="ema21">—</strong></div>
+      <div><span>MACD (12/26/9)</span><strong id="macd">—</strong></div>
+      <div><span>RSI (14)</span><strong id="rsi">—</strong></div>
+    </div>
+    <div class="progress"><div id="progress"></div></div>
+  </section>
+  <section class="card">
+    <div class="section-head"><h2>Recent ticks</h2><span class="muted">Latest first</span></div>
+    <div class="table-wrap"><table><thead><tr><th>Time</th><th>Price</th><th>Change</th></tr></thead><tbody id="ticks"><tr><td colspan="3" class="muted">No ticks received yet.</td></tr></tbody></table></div>
+  </section>
+  <section class="warning"><strong>Risk notice</strong><p>This is a signal-monitoring prototype for testing. Signals are experimental, do not guarantee future movement, and must not be treated as financial advice. Automated trading, account login and real-money orders are not enabled in this version.</p></section>
+  <footer>5G Trading Bot · Browser prototype · No trades are placed</footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
